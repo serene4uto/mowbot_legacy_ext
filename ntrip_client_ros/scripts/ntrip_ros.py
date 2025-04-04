@@ -181,6 +181,16 @@ class NTRIPRos(Node):
 
   def subscribe_nmea(self, nmea):
     # Cache the latest NMEA sentence
+    # TODO: polish this or fix at driver only sending GNGGA sentences
+    # Temporarily fix LG RTK Provider problem by using only GNGGA sentences
+    # Not sure if this is the right thing to do, but python will escape the return characters at the end of the string, so do this manually
+    temp_sentence = nmea.sentence
+    if temp_sentence[-4:] == '\\r\\n':
+      temp_sentence = temp_sentence[:-4] + '\r\n'
+    elif temp_sentence[-2:] != '\r\n':
+      temp_sentence = temp_sentence + '\r\n'
+    if not str(temp_sentence).startswith('$GNGGA'):
+      return
     self._latest_nmea = nmea.sentence
 
   def send_rtcm_and_nmea(self):

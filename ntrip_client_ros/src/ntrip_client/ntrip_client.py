@@ -222,7 +222,6 @@ class NTRIPClient:
 
     # Encode the data and send it to the socket
     try:
-      self._logdebug('Sending NMEA sentence to server: {}'.format(sentence))
       self._server_socket.send(sentence.encode('utf-8'))
     except Exception as e:
       self._logwarn('Unable to send NMEA sentence to server.')
@@ -250,7 +249,6 @@ class NTRIPClient:
     # Check if there is any data available on the socket
     read_sockets, _, _ = select.select([self._server_socket], [], [], 0)
     if not read_sockets:
-      self._logdebug('No data available on the socket')
       return []
 
     # Since we only ever pass the server socket to the list of read sockets, we can just read from that
