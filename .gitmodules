@@ -10,8 +10,8 @@
 
 [submodule "ntrip_client_ros"]
     path = ntrip_client_ros
-    url = https://github.com/Zeki411/ntrip_client_ros.git
-    branch = ros2
+    url = https://github.com/serene4uto/ntrip_client_ros.git
+    branch = main
 
 [submodule "ublox"]
     path = ublox
