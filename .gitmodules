@@ -13,15 +13,15 @@
     url = https://github.com/serene4uto/ntrip_client_ros.git
     branch = main
 
-[submodule "ublox"]
-    path = ublox
-    url = https://github.com/KumarRobotics/ublox.git
-    branch = ros2
+# [submodule "ublox"]
+#     path = ublox
+#     url = https://github.com/KumarRobotics/ublox.git
+#     branch = ros2
 
-[submodule "realsense-ros"]
-    path = realsense-ros
-    url = https://github.com/IntelRealSense/realsense-ros.git
-    branch = ros2-master
+# [submodule "realsense-ros"]
+#     path = realsense-ros
+#     url = https://github.com/IntelRealSense/realsense-ros.git
+#     branch = ros2-master
 
 [submodule "rplidar_ros"]
     path = rplidar_ros
